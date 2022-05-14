@@ -1,0 +1,582 @@
+<!-- Left Column (Progress Bar) -->
+<div class="column col-desc">
+
+    <div id="back-button" class="cursor" (click)="navigateToQuickServiceHome()"
+        style="padding-left: 20px;padding-top: 5px !important;"><img width="20" style="margin-right: 15px !important;"
+            class="back-img" height="20" src="../assets/images/back (2).svg" alt="">
+        <label style="color: black;" for="">Go back</label> </div>
+  
+    <div style="width: 60%;margin: 0 auto;text-align: left; position: relative !important;">
+
+        <!-- <div id="back-button" class="cursor"
+            (click)="navigateToQuickServiceHome()"
+            style="padding-left: 20px; position: absolute !important;">
+            
+            <img width="20"
+                style="margin-right: 15px !important;" class="back-img" height="20"
+                src="../assets/images/back (2).svg" alt="">
+
+            <a style="color: black;" >Go back</a> </div>
+        <div style="width: 60%;margin: 0 auto;text-align: left;"> -->
+
+        <h1 style="font-size: 24px; padding-top:0px;padding-bottom: 15px;padding-left: 12px;">Debit Card Request
+        </h1>
+
+        <!-- Progress side bar -->
+        <div class="ul-class-cont">
+            <!-- Account Validation -->
+            <div>
+                <div class="active-bg-icon" style="float: left;">
+                    <img *ngIf="!isAccountStepperActive && !isAccountStepperDone" src="./assets/images/Group775.png" height="20" width="20">
+                    <img *ngIf="isAccountStepperActive && !isAccountStepperDone" src="./assets/images/Group774.png" height="20" width="20">
+                    <img *ngIf="!isAccountStepperActive && isAccountStepperDone" src="./assets/images/Group773.png" height="20" width="20">
+                    <p class="li-icon-seperator" style="height: 40px !important;"></p>
+                </div>
+                <div class="li-content">
+                    <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isAccountStepperActive && !isAccountStepperDone}">Account Validation
+                    </p>
+                    <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isAccountStepperActive && !isAccountStepperDone}"> Provide your correct account number and phone number to validate your account
+                    </p>
+                </div>
+            </div>
+
+            <!-- Session -->
+            <div>
+                <div class="active-bg-icon" style="float: left;">
+                    <img *ngIf="!isContinueSessionStepperActive && !isContinueSessionStepperDone" src="./assets/images/Group775.png" height="20" width="20">
+                    <img *ngIf="isContinueSessionStepperActive && !isContinueSessionStepperDone" src="./assets/images/Group774.png" height="20" width="20">
+                    <img *ngIf="!isContinueSessionStepperActive && isContinueSessionStepperDone" src="./assets/images/Group773.png" height="20" width="20">
+                    <p class="li-icon-seperator" style="height: 40px !important;"></p>
+                </div>
+                <div class="li-content">
+                    <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isContinueSessionStepperActive && !isContinueSessionStepperDone}">
+                        Bvn
+                    </p>
+                    <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isContinueSessionStepperActive && !isContinueSessionStepperDone}">
+                        Insert your bvn and date of birth to continue. Click on validate bvn and continue to proceed.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="active-bg-icon" style="float: left;">
+                    <img *ngIf="!isCardInformationActive && !isCardInformaitonDone" src="./assets/images/Group775.png" height="20" width="20">
+                    <img *ngIf="isCardInformationActive && !isCardInformaitonDone" src="./assets/images/Group774.png" height="20" width="20">
+                    <img *ngIf="!isCardInformationActive && isCardInformaitonDone" src="./assets/images/Group773.png" height="20" width="20">
+                    <p class="li-icon-seperator" style="height: 40px !important;"></p>
+                </div>
+                <div class="li-content">
+                    <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isCardInformationActive && !isCardInformaitonDone}">
+                       Card Information
+                    </p>
+                    <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isCardInformationActive && !isCardInformaitonDone}">
+                        Please provide name on card and select the branch you want to pick up your card. and click proceed to move to the next step
+                    </p>
+                </div>
+            </div>
+
+            <!-- <div>
+                <div class="active-bg-icon" style="float: left;">
+                    <img *ngIf="!isTermandconditionActive && !isTermandconditionDone" src="./assets/images/Group775.png" height="20" width="20">
+                    <img *ngIf="isTermandconditionActive && !isTermandconditionDone" src="./assets/images/Group774.png" height="20" width="20">
+                    <img *ngIf="!isTermandconditionActive && isTermandconditionDone" src="./assets/images/Group773.png" height="20" width="20">
+                    <p class="li-icon-seperator" style="height: 40px !important;"></p>
+                </div>
+                <div class="li-content">
+                    <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isTermandconditionActive && !isTermandconditionDone}">
+                       Term and conditions
+                    </p>
+                    <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isTermandconditionActive && !isTermandconditionDone}">
+                        Click on the term and condition link to read the terms and condition and check the box to agree to the terms.
+                    </p>
+                </div>
+            </div> -->
+
+            <div>
+                <div class="active-bg-icon" style="float: left;">
+                    <img *ngIf="!isSummaryPageActive && !isSummaryPageDone" src="./assets/images/Group775.png" height="20" width="20">
+                    <img *ngIf="isSummaryPageActive && !isSummaryPageDone" src="./assets/images/Group774.png" height="20" width="20">
+                    <img *ngIf="!isSummaryPageActive && isSummaryPageDone" src="./assets/images/Group773.png" height="20" width="20">
+                    <p class="li-icon-seperator" style="height: 40px !important;"></p>
+                </div>
+                <div class="li-content">
+                    <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isSummaryPageActive && !isSummaryPageDone}">
+                       Summary
+                    </p>
+                    <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isSummaryPageActive && !isSummaryPageDone}">
+                        Review the information on this page and ensure your input was captured accurately. click process to move forward and back to fill the information again.
+                    </p>
+                </div>
+            </div>
+
+            <div >
+                <div class="active-bg-icon" style="float: left;">
+                    <img *ngIf="!isAuthenticationFormActive && !isAuthenticationFormDone" src="./assets/images/Group775.png" height="20" width="20">
+                    <img *ngIf="isAuthenticationFormActive && !isAuthenticationFormDone" src="./assets/images/Group774.png" height="20" width="20">
+                    <img *ngIf="!isAuthenticationFormActive && isAuthenticationFormDone" src="./assets/images/Group773.png" height="20" width="20">
+
+                    <p class="li-icon-seperator" style="height: 80px !important;"></p>
+                </div>
+                <div class="li-content">
+                    <p class="li-subtitle-disabled" [ngClass]="{'disabled-text': !isAuthenticationFormActive && !isAuthenticationFormDone}">
+                        Authentication
+                    </p>
+                    <p class="li-subcontent-disabled" [ngClass]="{'disabled-text': !isAuthenticationFormActive && !isAuthenticationFormDone}">
+                        Authentication is required to submit request. Please provide the necessary information!
+                    </p>
+                </div>
+            </div>
+            <!-- Account Type -->
+            
+        </div>
+    </div>
+
+</div>
+<!-- ==================== End of left column ======================= -->
+
+
+<!-- Right Column (Form Sections) -->
+
+<div class="column col-stepper-container">
+
+    <!-- <a id="back-button-mobile" class="cursor" [routerLink]="[ '/home']"
+        style="padding-left: 20px;padding-top: 5px !important;"><img width="20" style="margin-right: 15px !important;"
+            class="back-img" height="20" src="../assets/images/back (2).svg" alt="">
+        <label style="color: black;" for="">Go back</label> </a> -->
+
+    <div class="stepper-container">
+
+        <!-- Mobile -->
+        <h2 id="mobileheader" class="header-cls" #mobileheader>Debit Card request</h2>
+
+        <mat-horizontal-stepper labelPosition="bottom" #stepper>
+
+            <!-- Account Validation -->
+            <mat-step [stepControl]="accountFormGroup">
+                <form [formGroup]="accountFormGroup">
+
+                    <ng-template matStepLabel>Account Validation</ng-template>
+                    <h4>Please provide your accurate Information</h4>
+
+                    <!-- Spinner -->
+                    <section *ngIf="showSpinner">
+                        <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value" [bufferValue]="bufferValue">
+                        </mat-progress-bar>
+                    </section>
+                    <div class="w-100">
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>Account Number</mat-label>
+                            <input matInput autocomplete="off" maxlength="10" minlength="10" placeholder="Enter Account Number" formControlName="accountNoCtrl" type="text" required>
+                            <mat-hint align="end">Max 10 characters</mat-hint>
+                            <mat-error *ngIf="accountFormGroup.get('accountNoCtrl').hasError('required')">
+                                Account Number is required </mat-error>
+                            <mat-error *ngIf="accountFormGroup.get('accountNoCtrl').hasError('pattern')">
+                                Only numbers are allowed </mat-error>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="w-100">
+
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput autocomplete="off" maxlength="15" minlength="11" placeholder="Enter Phone Number" formControlName="phoneNoCtrl" required>
+                            <mat-hint align="end">Max 15 characters</mat-hint>
+                            <mat-error *ngIf="accountFormGroup.get('phoneNoCtrl').hasError('required')">
+                                Phone Number is required </mat-error>
+                            <mat-error *ngIf="accountFormGroup.get('phoneNoCtrl').hasError('pattern')">
+                                Only numbers are allowed </mat-error>
+                            <mat-error *ngIf="accountFormGroup.get('phoneNoCtrl').hasError('maxlength')">
+                                Phone Number must be 15 characters </mat-error>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="w-100">
+                        <!-- <button [disabled]="showSpinner" style="background-color: rgba(3, 150, 253, 0.16) ; width: 100%; text-transform: uppercase;
+                    color: #0396FD; height: 50px;" mat-button matStepperPrevious>Back</button> -->
+                        <button mat-flat-button class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}" [ngClass]="{'disabled': isAwaitingResponse || accountFormGroup.invalid}" mat-button [disabled]="isAwaitingResponse || accountFormGroup.invalid" (click)="proceedFromAccountForm(stepper)">Next</button>
+                    </div>
+
+                </form>
+
+               
+               
+            </mat-step>
+
+            <!-- Continue Session -->
+            <!-- <mat-step [stepControl]="continueSessionForm">
+                <form style="padding-top: 0px !important;">
+                    <ng-template matStepLabel state="check">Continue Session</ng-template>
+                    <h3 class="docs-required">Do you have a previous session?</h3>
+                    <p>If yes, please enter your Ticket ID below and click 'Ok' to continue from where you stopped</p>
+                    <form action="" [formGroup]="continueSessionForm">
+                        <mat-form-field>
+                            <mat-label>Enter Ticket ID</mat-label>
+                            <input formControlName="caseId" matInput>
+                        </mat-form-field>
+                    </form>
+                    <section *ngIf="showSpinner">
+                        <mat-progress-bar class="example-margin" [color]="color"
+                          [value]="value" [bufferValue]="bufferValue">
+                        </mat-progress-bar>
+                    </section>
+                    <div>
+                        <button style="background-color: rgba(3, 150, 253, 0.16) ; width: 100%; text-transform: uppercase;
+                    color: #0396FD; height: 50px;" mat-button (click)="proceedWithoutSession(stepper)">Get
+                            Started</button>
+                        <button mat-flat-button class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}" [ngClass]="{'disabled': isAwaitingResponse || !continueSessionForm.controls.caseId.value}" mat-button [disabled]="isAwaitingResponse || !continueSessionForm.controls.caseId.value"
+                            (click)="onYesClick(stepper)">
+                            Continue Session
+                        </button>
+                    </div>
+                </form>
+            </mat-step> -->
+            <mat-step [stepControl]="bvnForm">
+                <form style="padding-top: 0px !important;" [formGroup]="bvnForm">
+                    <ng-template matStepLabel state="check">BVN validation</ng-template>
+                    
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Enter BVN</mat-label>
+                        <input formControlName="bvnCtrl" maxlength="11" matInput autocomplete="off" placeholder="Enter your bvn" type="text">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Enter Date of birth</mat-label>
+                        <input formControlName="dateOfBirthCtrl" matInput autocomplete="off" placeholder="Enter your date of birth" type="date">
+                    </mat-form-field>
+
+                    
+
+                </form>
+                <!-- Spinner -->
+                <section *ngIf="showSpinner">
+                    <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value" [bufferValue]="bufferValue">
+                    </mat-progress-bar>
+                </section>
+
+                <div>
+                    <button [disabled]="showSpinner" style="background-color: rgba(3, 150, 253, 0.16) ; width: 100%; text-transform: uppercase;
+                color: #0396FD; height: 50px;" mat-button matStepperPrevious>Back</button>
+                    <button mat-flat-button class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}" (click)="ValidateBvn(stepper)" [ngClass]="{'disabled': isAwaitingResponse || bvnForm.invalid}" mat-button [disabled]="isAwaitingResponse || bvnForm.invalid">
+                        Validate bvn and Continue
+                    </button>
+                </div>
+            </mat-step>
+
+            <mat-step [stepControl]="cardInformaitonForm">
+                <form style="padding-top: 0px !important;" [formGroup]="cardInformaitonForm">
+                    <ng-template matStepLabel state="check">Card information</ng-template>
+                    
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Name on card</mat-label>
+                        <input formControlName="nameOnCardCtrl" matInput autocomplete="off" placeholder="Enter the name on card" maxlength="21" type="text">
+                    </mat-form-field>
+
+                    <!-- <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Select card Type</mat-label>
+                        <mat-select formControlName="cardType" class="select-dropdown" placeholder="Please select your branch" >
+                            <mat-option *ngFor="let option of cardTypes" [value]="option.cardType">
+                                {{option.cardType}} Fee: N{{option.fee}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+
+                    <mat-form-field  appearance="fill" class="w-100">
+                        <mat-label>Select branch for card delivery</mat-label>
+
+                        <mat-select formControlName="branchCtrl" class="select-dropdown" placeholder="Please select your branch" >
+                            <mat-option *ngFor="let option of branches" [value]="option">
+                                {{option.branch}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div>
+                        <h3>
+                            Please note that you can only request for a mastercard silver banking debit card via this portal. For other types of cards, please contact the customer contact centre on 0700 909 909 909 or Customercarenigeria@stanbicibtc.com or visit any of our branches nationwide.
+                        </h3>
+                    </div>
+
+                    <!-- <mat-form-field  appearance="fill" class="w-100">
+                        <mat-label>Select State of origin</mat-label>
+
+                        <mat-select formControlName="stateCtrl" class="select-dropdown" placeholder="Please select your city" >
+                            <mat-option (click)="changeState(option)" *ngFor="let option of states" [value]="option">
+                                {{option}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+
+
+                    <!-- <mat-form-field  appearance="fill" class="w-100">
+                        <mat-label>Select City</mat-label>
+
+                        <mat-select formControlName="cityCtrl" class="select-dropdown" placeholder="Please select your city" >
+                            <mat-option *ngFor="let option of cities" [value]="option">
+                                {{option.city}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+
+                    <!-- <mat-form-field  appearance="fill" class="w-100">
+                        <mat-label>Select Title</mat-label>
+
+                        <mat-select formControlName="titleCtrl" class="select-dropdown" placeholder="Please select your title" >
+                            <mat-option *ngFor="let option of titles" [value]="option">
+                                {{option.customerTitleCode}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+
+                    <!-- <mat-form-field  appearance="fill" class="w-100">
+                        <mat-label>Select Gender</mat-label>
+
+                        <mat-select formControlName="genderCtrl" class="select-dropdown" placeholder="Please select your title" >
+                            <mat-option *ngFor="let option of gender" [value]="option">
+                                {{option}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+
+                    <!-- <mat-form-field  appearance="fill" class="w-100">
+                        <mat-label>Select Marital Status</mat-label>
+
+                        <mat-select formControlName="maritalStatusCtrl" class="select-dropdown" placeholder="Please select your title" >
+                            <mat-option *ngFor="let option of maritalStaus" [value]="option">
+                                {{option.maritalStatus}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+                   
+
+                </form>
+                <!-- Spinner -->
+                <section *ngIf="showSpinner">
+                    <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value" [bufferValue]="bufferValue">
+                    </mat-progress-bar>
+                </section>
+
+                <div>
+                    <button style="background-color: rgba(3, 150, 253, 0.16) ; width: 100%; text-transform: uppercase;
+                color: #0396FD; height: 50px;" mat-button matStepperPrevious>Back</button>
+                    <button mat-flat-button class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}" (click)="proceedToTermsPageStepper(stepper)" [ngClass]="{'disabled': isAwaitingResponse || cardInformaitonForm.invalid}" mat-button [disabled]="isAwaitingResponse || cardInformaitonForm.invalid">
+                        Proceed
+                    </button>
+                </div>
+            </mat-step>
+
+            <!-- <mat-step>
+                <ng-template matStepLabel state="check">Term And Condition</ng-template>
+      
+      
+                <div>
+                    <mat-checkbox  (change)="checked($event.checked)" >I have read and agree to the<a target="_blank"  style="color: #113998; max-width: 310px !important;" class="custom-file-upload" href="assets/templates/Personal_Banking_T&C.pdf" mat-button>
+                      Terms and Conditions
+                      <img class="downloadicon"   src="assets/images/download.png" width="20px" height="15px">
+                   </a> 
+                  </mat-checkbox>
+
+
+             
+            </div>
+                <mat-progress-bar mode="indeterminate" *ngIf="isAwaitingResponse" style="margin-bottom: 20px ;">
+                </mat-progress-bar>
+                <button style=" margin-top: 20px; cursor:pointer; padding-left: 15px; margin-left: 15px;margin-right:20px !important;background-color: rgba(3, 150, 253, 0.16) ; text-transform: uppercase;
+              color: #0396FD; width:40%; height: 50px;" mat-button matStepperPrevious>Back</button>
+                
+                <button style=" color: #FFFFFF ;cursor:pointer;
+              background-color: #113998; height: 50px; width:40%; text-transform: uppercase;" mat-button
+                  [disabled]="!isTermAndCond1Checked"
+                  [ngClass]="{'disabled': !isTermAndCond1Checked }"
+                  (click)="proceedFromTermsCondition(stepper)">Proceed</button>
+      
+              </mat-step> -->
+
+              <mat-step>
+                <!-- <form style="padding-top: 20px !important;"  > -->
+                <ng-template matStepLabel state="check">Summary</ng-template>
+      
+      
+                <div>
+                    <p>Confirm your information</p>
+                    <ul>
+                        <li>
+                            Card Name: {{nameOnCard}}
+                            
+                        </li>
+                        <li>Branch selected: {{branch.branch}}</li>
+                    </ul>
+
+                    <p>Please note that a fee of N1075 (inclusive of VAT) will be debited from your account for this card request</p>
+                    <div>
+                        <mat-checkbox  (change)="checked($event.checked)" >I have read and agree to the<a target="_blank"  style="color: #113998; max-width: 310px !important;" class="custom-file-upload" href="assets/templates/Personal_Banking_T&C.pdf" mat-button>
+                          Terms and Conditions
+                          <img class="downloadicon"   src="assets/images/download.png" width="20px" height="15px">
+                       </a> 
+                       <!-- <a mat-button style="color:#3f51b5;"  ><span (click)="onClickTermsAndCondition()">Terms and Conditions</span></a >  -->
+                      </mat-checkbox>
+    
+                    <!-- <input type="checkbox"  name="checkbox" value="check" id="agree" />  -->
+    
+                 
+                    </div>
+                <!-- <input type="checkbox"  name="checkbox" value="check" id="agree" />  -->
+
+             
+            </div>
+                <mat-progress-bar mode="indeterminate" *ngIf="isAwaitingResponse" style="margin-bottom: 20px ;">
+                </mat-progress-bar>
+                <button [disabled]="isAwaitingResponse" style=" margin-top: 20px; cursor:pointer; padding-left: 15px; margin-left: 15px;margin-right:20px !important;background-color: rgba(3, 150, 253, 0.16) ; text-transform: uppercase;
+              color: #0396FD; width:40%; height: 50px;" mat-button matStepperPrevious>Back</button>
+                <!-- <button style="color: #FFFFFF ;cursor:pointer ; background-color: #113998 ;text-transform: uppercase;
+              height: 40px; margin-bottom: 15px;" mat-button [ngClass]="{'disabled': EnterpriseOnlineGroup.invalid}"
+                  mat-button [disabled]="EnterpriseOnlineGroup.invalid" (click)="AddEnterpriseOnline()">
+                  Add User
+                </button> -->
+                <button style=" color: #FFFFFF ;cursor:pointer;
+              background-color: #113998; height: 50px; width:40%; text-transform: uppercase;" mat-button
+              [disabled]="!isTermAndCond1Checked || isAwaitingResponse"
+              [ngClass]="{'disabled': !isTermAndCond1Checked || isAwaitingResponse }"
+              (click)="proceedFromSummary(stepper)"
+             >Proceed</button>
+      
+                <!-- </form> -->
+              </mat-step>
+              <mat-step class="align-left" >
+                <ng-template matStepLabel>Verify OTP</ng-template>
+                <form [formGroup]="otpForm">
+                    <section *ngIf="showSpinner">
+                        <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value" [bufferValue]="bufferValue">
+                        </mat-progress-bar>
+                    </section>
+                    <div class="">
+                        <h4>Please provide the OTP sent to your registered phone number</h4>
+
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>Enter OTP</mat-label>
+                            <input matInput autocomplete="off" type="password" placeholder="Enter the verification otp" formControlName="otpControl" minlength="5" maxlength="5" required>
+                            <mat-hint align="end" class="cursor" style="color: #1428C4;" (click)="resendOTP()">Resend OTP
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <button [disabled]="showSpinner" style="background-color: rgba(3, 150, 253, 0.16) ; width: 100%; text-transform: uppercase;
+                    color: #0396FD; height: 50px;" mat-button matStepperPrevious>Back</button>
+                    <button mat-flat-button class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}" [disabled]="isAwaitingResponse || !otpForm.valid" (click)="submitRequest(stepper)">Submit</button>
+                </form>
+            </mat-step>
+
+            <!-- Done -->
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel state="check">Done</ng-template>
+
+                    <h5 style="background-color: rgba(100, 231, 152, 0.16);text-align: center; font-weight: lighter; padding:20px !important; font-size: medium;">
+                        <div style="text-align: center !important;">
+                            <img src="./assets/images/Group773.png" height="64" width="64">
+
+                        </div>
+                        Your Debit Card request request has been successfully submitted with Ticket ID <br>
+                        <b> {{ticketID}}.</b> <br> Please keep this ID safe for future reference. For further enquiries, contact the Customer Contact Centre on 0700 909 909 909 or CustomerCareNigeria@stanbicibtc.com”
+                    </h5>
+                </form>
+            </mat-step>
+
+            <ng-template matStepperIcon="check">
+                <mat-icon style="background: #0033A1;">check_circle</mat-icon>
+            </ng-template>
+
+        </mat-horizontal-stepper>
+    </div>
+</div>
+<ng-template #hotListModalTemplate>
+    <div class="page-wrapper">
+      <div>
+        <!-- <mat-icon class="close-reveal-modal1" [mat-dialog-close]="closeModal" style="background: #FFFFFF;">close
+      </mat-icon> -->
+
+        <!-- <a class="fa fa-times close-reveal-modal1" [mat-dialog-close]="closeModal"></a> -->
+
+
+
+        <div class="row" style="clear: both;">
+          <div class="col-md-12 col-xs-12 text-center" style="margin: 0 auto;">
+            <div class="large-12 medium-12 small-12 medium-centered large-centered columns tc-wrap"
+              style="width: 100%;margin-left: auto;margin-right: auto;">
+              <div class="tc-inner-wrap row">
+                <div class="tc-container webkit-scroll" style="max-height: 579px;overflow-y: auto;">
+                  <div>
+                    <form [formGroup]="hotListForm">
+                    <div class="  large-10 medium-10 small-12 medium-centered large-centered">
+                      <div class="conditions"><span class="conditiom-heading">Warning</span></div>
+                      
+                     
+                     
+                      <div class="conditions">
+                        <br>
+                        <br>
+                        <br>
+
+
+                        <span class="condition-desc">
+                            There’s an active card linked to this account, the existing card will be hotlisted before a new one is produced.
+                            Please select reason for hotlisting card and click okay to proceed or cancel to abort.
+                        </span>
+                       
+                        <mat-form-field  appearance="fill" class="w-100">
+                            <mat-label>Select Reason</mat-label>
+    
+                            <mat-select formControlName="hotlistcodeCtrl" class="select-dropdown" placeholder="Please select your branch" >
+                                <mat-option *ngFor="let option of hotlistCodes" [value]="option">
+                                    {{option.reason}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                   
+                      </div>
+
+
+                    </div>
+                    <div style="padding-bottom: 20px;">
+                      <section *ngIf="showSpinner">
+                        <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+                          [bufferValue]="bufferValue">
+                        </mat-progress-bar>
+                      </section>
+                    </div>
+
+                    <div class="terms-condition">
+                      <div style="padding-top: 20px;">
+                        <!-- <button
+                        style="float: right; color: #FFFFFF ;width: 17% !important; height: 50 px; text-transform: uppercase;"
+                        mat-flat-button class="big-buttonStyles" [ngClass]="{'primary': class=='primary'}"
+                        [disabled]="!isIAgreeChecked" (click)="proceedToRequirement(stepper)">Proceed</button> -->
+                        <button
+                          style="color: #FFFFFF ; float:right ;
+                                      background-color: #113998 ; width: 25% !important; height: 50px; text-transform: uppercase;"
+                           mat-button [disabled]="hotListForm.invalid" [ngClass]="{'disabled': hotListForm.invalid}" 
+                          (click)="concertTohotlist()">Okay</button>
+
+
+                        <button style="    border: 1px solid red;
+              margin-right: 15px;background-color: transparent; text-transform: uppercase; 
+                color: red !important;width: 25% !important; height: 50 px; float: right;" mat-flat-button
+                          [ngClass]="{'primary': class=='primary'}" (click)="disagreeTC(stepper)">Cancel</button>
+
+
+
+                      </div>
+                   
+                    </div>
+                </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+<ng-template #iFrameModalTemplate>
+    <iframe style="height: 100%; border: none;" id="quickServiceIFrame" src="" class="col-md-12"></iframe>
+</ng-template>
